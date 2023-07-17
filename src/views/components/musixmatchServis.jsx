@@ -11,7 +11,7 @@ const MusixmatchServis = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://api.musixmatch.com/ws/1.1/track.get", {
+      .get("https://api.musixmatch.com/ws/1.1/track.get", {
         headers: {
           "Content-Type": "application/json",
         },
@@ -32,7 +32,7 @@ const MusixmatchServis = (props) => {
   useEffect(() => {
     axios
       .get(
-        `http://api.musixmatch.com/ws/1.1/track.lyrics.get?commontrack_id=${id}&apikey=${musixMatchApi}`
+        `https://api.musixmatch.com/ws/1.1/track.lyrics.get?commontrack_id=${id}&apikey=${musixMatchApi}`
       )
       .then((res) => {
         if (res.data.message.body.length !== 0) {
