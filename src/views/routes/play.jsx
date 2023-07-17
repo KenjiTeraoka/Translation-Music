@@ -42,7 +42,7 @@ const Play = () => {
               handleLyric={handleLyric}
             />
 
-            {/* <div className="w-4/5">{lyric && <Translate lyric={lyric} />}</div> */}
+            <div className="w-4/5">{lyric && <Translate lyric={lyric} />}</div>
           </div>
         </div>
       </div>
