@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/dev/api/:path*",
+      "destination": "https://api.musixmatch.com/ws/1.1/dev/api/:path*"
+    }
+  ]
+}
