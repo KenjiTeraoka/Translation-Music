@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route
-          path="/play/:musicTitle/:artists/:image/:isrc"
+          path="/play/:musicTitle/:artists/:image/:isrc/:spotifyurl"
           element={<Play />}
         />
         <Route path="*" element={<NoMatch />} />

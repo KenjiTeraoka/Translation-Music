@@ -21,8 +21,11 @@ const MusixmatchServis = (props) => {
         },
       })
       .then((res) => {
-        let getid = res.data.message.body.track.commontrack_id;
-        setId(getid);
+        console.log(res);
+        if (res.data.message.body.length !== 0) {
+          let getid = res.data.message.body.track.commontrack_id;
+          setId(getid);
+        }
       });
   }, []);
 
@@ -62,7 +65,7 @@ const MusixmatchServis = (props) => {
         return <p key={index}>{e}</p>;
       })}
 
-      <p className="pt-6 text-xs text-gray-400">{copyRight}</p>
+      <p className="text-xs text-gray-400 pt-14">{copyRight}</p>
     </div>
   );
 };

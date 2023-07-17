@@ -37,19 +37,25 @@ const Translate = (props) => {
     "ダーキオは最近ポジティブなことばかり言っていて、そうだ、そうだ 最近、ただ現れて何かしらを成し遂げたいんだ、そうだ、そうだ ずっと小さい頃から数学好きだったけど、最近はキャッシュを手に入れてるんだ バッグの数を数えるのも忙しくて、あまりにも速すぎるんだ 苦しい時期は続かない、警察につままれることを覚えてるかい？";
 
   useEffect(() => {
-    // postLyric(props.lyric);
-    setMessage(JpLyric);
+    postLyric(props.lyric);
+    // setMessage(JpLyric);
   }, [props.lyric]);
 
   useEffect(() => {
-    // console.log("message", message);
-    const fixedLyric = message.split(" ");
-    // console.log("fixedLyric", fixedLyric);
+    const splitLyric = message.split("\n");
+    const fixedLyric = splitLyric.map((e) => {
+      if (e === "") {
+        return (e = "\n");
+      } else {
+        return e;
+      }
+    });
+    console.log("fixedLyric", fixedLyric);
     setFixedLyric(fixedLyric);
   }, [message]);
 
   return (
-    <div className="pl-3 text-left">
+    <div className="pl-3 text-left whitespace-pre-line">
       {fixedLyric.map((e, index) => {
         return <p key={index}>{e}</p>;
       })}

@@ -47,10 +47,11 @@ const SearchArtists = (props) => {
   return (
     <>
       {responseData.length > 0 && (
-        <ul className="items-center">
+        <ul className="items-center w-3/5 mx-auto">
           {responseData.map((e, index) => {
             return (
               <li
+                className="flex items-center gap-6 p-2 rounded-md opacity-50 hover:bg-gray-200 hover:opacity-100"
                 key={index}
                 onClick={() => {
                   navigate(
@@ -58,14 +59,26 @@ const SearchArtists = (props) => {
                       responseData[index].artists
                     }/${encodeURIComponent(responseData[index].images.L)}/${
                       responseData[index].isrc
-                    }`
+                    }/${encodeURIComponent(responseData[index].external_urls)}`
                   );
                 }}
               >
                 <img src={e.images.S} alt="" />
                 <p>
-                  {e.musicTitle}:{e.artists}, url:{e.external_urls}
+                  <span className="text-xl font-bold">{e.musicTitle}</span> -{" "}
+                  {e.artists}
                 </p>
+                <a
+                  href={responseData[index].external_urls}
+                  className="block p-2 text-right rounded-full hover:bg-gray-300"
+                  target="_blank"
+                >
+                  <img
+                    className="w-4 h-4"
+                    src="gaibulink.png"
+                    alt="外部リンク"
+                  />
+                </a>
               </li>
             );
           })}
