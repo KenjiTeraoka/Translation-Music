@@ -7,7 +7,7 @@ const MusixmatchServis = (props) => {
   const [fixedLyric, setFixedLyric] = useState([]);
   const [copyRight, setCopyRight] = useState("");
 
-  const musixMatchApi = process.env.MUSIXMATCH_API_KEY;
+  const musixMatchApi = process.env.REACT_APP_MUSIXMATCH_API_KEY;
 
   useEffect(() => {
     axios

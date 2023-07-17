@@ -23,7 +23,7 @@ const Home = () => {
       <h1 className="py-20 text-4xl font-bold">
         Japanese translation of the lyrics
       </h1>
-      {/* <AccessToken postAccessToken={postAccessToken} /> */}
+      <AccessToken postAccessToken={postAccessToken} />
 
       <form onSubmit={handleSubmit}>
         <input
@@ -35,13 +35,13 @@ const Home = () => {
         />
       </form>
 
-      {/* {accessToken && musicTitle && (
+      {accessToken && musicTitle && (
         <SearchArtists
           accessToken={accessToken}
           musicTitle={musicTitle}
           className="flex"
         />
-      )} */}
+      )}
     </>
   );
 };

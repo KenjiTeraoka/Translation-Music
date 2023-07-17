@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Buffer } from "buffer";
 
-const clientId = process.env.SPOTIFY_CLIENT_ID;
-const clientSecret = process.env.SPOTIFY_CLIENT_SEACRET_ID;
+const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+const clientSecret = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET_ID;
 
 const AccessToken = (props) => {
   const [accessToken, setAccessToken] = useState("");
@@ -41,6 +41,7 @@ const AccessToken = (props) => {
   }, []);
 
   useEffect(() => {
+    console.log(accessToken);
     props.postAccessToken(accessToken);
   }, [accessToken]);
 

@@ -30,13 +30,13 @@ const Play = () => {
         <p className="mx-6 my-4 text-2xl font-bold text-left">Lyric / 歌詞</p>
 
         <div className="flex p-6 bg-white rounded-xl">
-          {/* <MusixmatchServis
+          <MusixmatchServis
             className=""
             isrc={isrc}
             handleLyric={handleLyric}
-          /> */}
+          />
 
-          {/* <div className="w-4/5">{lyric && <Translate lyric={lyric} />}</div> */}
+          <div className="w-4/5">{lyric && <Translate lyric={lyric} />}</div>
         </div>
       </div>
     </>
