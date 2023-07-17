@@ -6,7 +6,7 @@ const Translate = (props) => {
   const [fixedLyric, setFixedLyric] = useState([]);
 
   const configuration = new Configuration({
-    apiKey: "",
+    apiKey: process.env.CHATGPT_API_KEY,
   });
   const openai = new OpenAIApi(configuration);
 

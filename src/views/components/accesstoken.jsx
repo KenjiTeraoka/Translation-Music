@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Buffer } from "buffer";
 
-const clientId = "";
-const clientSecret = "";
+const clientId = process.env.SPOTIFY_CLIENT_ID;
+const clientSecret = process.env.SPOTIFY_CLIENT_SEACRET_ID;
 
 const AccessToken = (props) => {
   const [accessToken, setAccessToken] = useState("");
